@@ -20,6 +20,10 @@
     [self restoreGammaValues];
     [self setShortcutObservers];
     
+    self.dd = [[DasungDisplay alloc] init];
+//    [self.dd refresh];
+    [self enableDasungDisplayShortcuts];
+    
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(restoreGammaValues) name:NSWorkspaceDidWakeNotification object:nil];
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(restoreGammaValues) name:@"com.apple.screensaver.didstop" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restoreGammaValues) name:NSApplicationDidChangeScreenParametersNotification object:nil];
@@ -277,6 +281,88 @@
     else {
         [[MASShortcutMonitor sharedMonitor] unregisterShortcut:shortcut];
     }
+}
+
+- (void)enableDasungDisplayShortcuts {
+    MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_C modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd refresh];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Comma modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd contrastSubstract];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Period modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd contrastAdd];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_M modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd mModeChange];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Equal modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd refreshSpeedAdd];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Minus modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd refreshSpeedSubstract];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_LeftBracket modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd lightIntensitySubstract];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_RightBracket modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd lightIntensityAdd];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_Backslash modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [self.dd lightIntensityToggle];
+    }];
+    
+    shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_I modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagOption | NSEventModifierFlagControl];
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:shortcut withAction:^{
+        if (![[self dd] displayFound]) {
+            [[self dd] findDisplay];
+        }
+        [[self dd] setUpDefaultSettings];
+    }];
 }
 
 - (void)checkForUpdateMenuAction {

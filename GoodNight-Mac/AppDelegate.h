@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <MASShortcut/Shortcut.h>
 #import <Sparkle/Sparkle.h>
+#import "DasungDisplay.h"
 
 static NSString * const MASOpenShortcutEnabledKey = @"openShortcutEnabled";
 static NSString * const MASResetShortcutEnabledKey = @"resetShortcutEnabled";
@@ -27,6 +28,7 @@ static void *MASObservingContext = &MASObservingContext;
 @property (strong, nonatomic) NSMenu *statusMenu;
 @property (strong, nonatomic) NSMenuItem *loginItem;
 @property (strong, nonatomic) NSMenuItem *seperatorItem;
+@property (strong, nonatomic) DasungDisplay *dd;
 
 @property NSWindowController *tabWindowController;
 @property NSWindowController *aboutWindowController;

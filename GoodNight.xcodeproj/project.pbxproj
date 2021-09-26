@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7276C4D22700E9B600C0AD63 /* DDC.c in Sources */ = {isa = PBXBuildFile; fileRef = 7276C4D02700E9B500C0AD63 /* DDC.c */; };
+		7276C4D52700E9F200C0AD63 /* DasungDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7276C4D42700E9F200C0AD63 /* DasungDisplay.m */; };
 		755924081C21B147000E62AE /* MobileGestaltClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 755924011C21546A000E62AE /* MobileGestaltClient.m */; };
 		75885DCF1C2027F400B57791 /* SpringBoardServicesClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCE45A11C1B6D3100CD094C /* SpringBoardServicesClient.m */; };
 		75885DD01C2027F400B57791 /* IOMobileFramebufferClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEC471C1B1B8A00142DD9 /* IOMobileFramebufferClient.m */; };
@@ -60,6 +62,10 @@
 		32AFEC471C1B1B8A00142DD9 /* IOMobileFramebufferClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOMobileFramebufferClient.m; sourceTree = "<group>"; };
 		3971266E1C3EE5F40066FE4C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		511EBE631BEBB1E200D5DAF7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		7276C4D02700E9B500C0AD63 /* DDC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DDC.c; sourceTree = "<group>"; };
+		7276C4D12700E9B600C0AD63 /* DDC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDC.h; sourceTree = "<group>"; };
+		7276C4D32700E9E100C0AD63 /* DasungDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DasungDisplay.h; sourceTree = "<group>"; };
+		7276C4D42700E9F200C0AD63 /* DasungDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DasungDisplay.m; sourceTree = "<group>"; };
 		75472CDC1C45313F00D9B85D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		755924001C21546A000E62AE /* MobileGestaltClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestaltClient.h; sourceTree = "<group>"; };
 		755924011C21546A000E62AE /* MobileGestaltClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileGestaltClient.m; sourceTree = "<group>"; };
@@ -225,6 +231,10 @@
 		922B281E1DDE81CF0075C274 /* GoodNight-Mac */ = {
 			isa = PBXGroup;
 			children = (
+				7276C4D42700E9F200C0AD63 /* DasungDisplay.m */,
+				7276C4D32700E9E100C0AD63 /* DasungDisplay.h */,
+				7276C4D02700E9B500C0AD63 /* DDC.c */,
+				7276C4D12700E9B600C0AD63 /* DDC.h */,
 				922B281F1DDE81CF0075C274 /* AppDelegate.h */,
 				922B28201DDE81CF0075C274 /* AppDelegate.m */,
 				9255195B1DF8F9010077CAC1 /* Gamma Controller */,
@@ -574,7 +584,9 @@
 				926076941DE672FF00D6320D /* ColorViewController.m in Sources */,
 				925FF57C1DE8EE1A007675AE /* MainTouchBarController.m in Sources */,
 				926076951DE672FF00D6320D /* TemperatureViewController.m in Sources */,
+				7276C4D52700E9F200C0AD63 /* DasungDisplay.m in Sources */,
 				92A182741DEA82C0001BA7C3 /* AboutViewController.m in Sources */,
+				7276C4D22700E9B600C0AD63 /* DDC.c in Sources */,
 				926893B31DE93D4E00BED81C /* ShadeViewController.m in Sources */,
 				9264E1401DE67A3200E61408 /* TabViewController.m in Sources */,
 				92FEA6B11DE6B324001EA06B /* TemperatureTouchBarController.m in Sources */,
