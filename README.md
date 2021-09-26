@@ -15,6 +15,25 @@ This application uses `dlsym`, which loads in the private symbols at runtime,
 rather than using headers, so no additional setup is needed once you download
 the source.
 
+### Dasung
+
+New shortcuts to control Dasung display:
+
+-- Ctrl + Alt + Cmd + c - refresh screen
+
+-- Ctrl + Alt + Cmd + m - change 'M' mode
+
+-- Ctrl + Alt + Cmd + -/+ - change speed
+
+-- Ctrl + Alt + Cmd + ,/. - change contrast
+
+-- Ctrl + Alt + Cmd + [/] - change front light intensity
+
+-- Ctrl + Alt + Cmd + \ - enable/disable front light
+
+-- Ctrl + Alt + Cmd + i - setup default settings
+
+
 ### Installing
 
 See [here] (Help/README.md) for written instructions.  
