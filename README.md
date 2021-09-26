@@ -29,6 +29,8 @@ New shortcuts to control Dasung display:
 
 ### Installing
 
+Prebuilt app with Dasung shorcuts in [bin](https://github.com/kfur/Dasung-GoodNight/tree/master/bin) directory
+
 See [here] (Help/README.md) for written instructions.  
 Click on [this link] (https://www.youtube.com/watch?v=Yu62IlaqPQM) to see the official install video.  
 
